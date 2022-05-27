@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "email": "Coco-mai@email.com",
+      "password": "$2a$10$O0NEIBssWfBd4mJ2gD1UzuNb98gn5l0jtjEIw2A2B2cli8tmjhEAO",
+      "id": 1
+    },
+    {
+      "email": "jason@email.com",
+      "password": "$2a$10$XKXSDixO8AkFMK.nsFqVNure8kpK5CPG/N44GqsxSwWfOvTrGUZxO",
+      "id": 2
+    },
+    {
+      "email": "dgsd@yahoo.fr",
+      "password": "$2a$10$nRJzf9XyCMPy3XRR3BBfleLGCad0X.AGPPLB0UOb8irXMobJW2uKO",
+      "id": 3
+    },
+    {
+      "email": "hshs@yaho.fr",
+      "password": "$2a$10$hStghCjEQfOxG1xfa1WwTuDxpmL/oid5uaK8soaGLZvPJAja91inO",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+header {
+  background-color: #15574e;
+}
+
+.navbar-brand {
+  color: #eb5600;
+  font-weight: bold;
+
+}
+
+.clickable{
+  cursor: pointer;
+}
