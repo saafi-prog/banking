@@ -1,0 +1,42 @@
+<form class="col-md-6 g-3 row-cols-xl-auto mx-auto mt-5 shadow-lg p-3 mb-5 bg-body rounded" [formGroup]="createProfileForm"
+    (ngSubmit)="onSubmitCreateProfile()">
+    <div class="mt-5 ">
+        <div class="col text-center mt-2 mb-4">
+            <h1>Créer votre  profil</h1>
+        </div>
+
+        <div class="col-md-8 mx-auto mb-3">
+            <label for="firstName" class="form-label">Prenom</label>
+            <input formControlName="firstName"  name="firstName" type="firstName" class="form-control" id="firstName" />
+        </div>
+
+        <div class="col-md-8 mx-auto mb-3">
+            <label for="lastName" class="form-label">Nom</label>
+            <input formControlName="lastName" name="lastName" type="lastName" class="form-control" id="lastName" />
+        </div>
+
+        <div class="col-md-8 mx-auto mb-3">
+            <label for="mobilePhone" class="form-label">Numéro de mobile</label>
+            <input formControlName="mobilePhone" name="mobilePhone" type="mobilePhone" class="form-control" id="mobilePhone" />
+        </div>
+
+        <div class="col-md-8 mx-auto mb-3">
+            <label for="iban" class="form-label">Iban</label>
+            <input formControlName="iban"  placeholder="Entrer votre numéri IBAN" name="username" type="iban" class="form-control" id="iban" />
+        </div>
+
+        <div class="col-md-8 mx-auto mb-3">
+            <label for="threshold" class="form-label">Choisir un seuil d'alerte</label>
+            <input formControlName="threshold" name="threshold" type="threshold" class="form-control" id="threshold" />
+        </div>
+
+        <div>
+            <button [disabled]="createProfileForm.invalid" type="submit"
+                class="btn btn-primary text-nowrap d-grid gap-2 col col-xl-4 mx-auto mt-3"
+                style="background-color: #15574e">
+                Soumettre
+            </button>
+        </div>
+
+    </div>
+</form>

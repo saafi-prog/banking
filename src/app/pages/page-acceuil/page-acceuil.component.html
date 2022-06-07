@@ -6,19 +6,21 @@ class=" col-md-6 g-3 row-cols-xl-auto mx-auto mt-5 shadow-lg p-3 mb-5 bg-body ro
         <h1> Se connecter</h1>
     </div>
     <div class=" mt-5">
-        <div class="col-md-8 mx-auto mb-3 ">
-            <label for="exampleInputEmail1" class="form-label">E-mail</label>
+        <div class="  col-md-8 mx-auto mb-3 ">
+            <label for="exampleInputEmail1" class="form-label">Adresse mail</label>
+            <div class="input-group">
+            <span class="input-group-text" id="userHelp">@</span>
             <input ngModel required type="email"   name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
-
+    </div>
         <div class="col-md-8 mx-auto mb-3">
             <label for="password" class="form-label">Mot de passe</label>
             <input  ngModel required  name = "password" type="password" class="form-control" id="password">  
         </div>
 
        
-        <div class="d-grid gap-2 col col-xl-4 mx-auto mt-5">
-            <button [disabled]="signInForm.invalid" class="btn btn-success" style="background-color:#15574e " type="submit">Valider</button>
+        <div class="d-grid gap-2 col col-xl-4 mx-auto mt-5" >
+            <button [disabled]="signInForm.invalid"     class="btn btn-success" style="background-color:#15574e " type="submit">Valider</button>
         </div>
         <div class=" col-md-8 d-flex justify-content-between mx-auto mt-5 " id="mdp">
             <p><a routerLink="renitialisation">Mot de passe oublié ?</a></p>

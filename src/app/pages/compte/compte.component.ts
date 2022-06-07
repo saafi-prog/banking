@@ -20,16 +20,19 @@ export class CompteComponent implements OnInit {
   ngOnInit(): void {
     this.todayWithPipe = this.pipe.transform(Date.now(), 'dd/MM/yyyy');
     console.log(this.transactions);
-    /*
-    const sortedDesc = this.transactions.sort(
-      (objA, objB) => objB.date.getTime() - objA.date.getTime()
-      
-    );
-*/
+
     this.bankingService.getAccounCurrentUser().subscribe((response) => {
       console.log(response);
+
       this.account = response.account;
       this.transactions = response.transactions;
+
+      const sortedTransactions = this.transactions.sort(
+        (objA, objB) =>
+          new Date(objB.date).getTime() - new Date(objA.date).getTime()
+      );
+
+      this.transactions = sortedTransactions;
     });
 
     const token = localStorage.getItem('token');

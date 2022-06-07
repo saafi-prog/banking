@@ -1,24 +1,27 @@
-<form class="col-md-6 g-3 row-cols-xl-auto mx-auto mt-5 shadow-lg p-3 mb-5 bg-body rounded"
-    [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-    <div class="col-md-6 ">
+<form class="col-md-6 g-3 row-cols-xl-auto mx-auto mt-5 shadow-lg p-3 mb-5 bg-body rounded" [formGroup]="signUpForm"
+    (ngSubmit)="onSubmit()">
+    <div>
         <div class="col text-center mt-2">
             <h1>Inscription</h1>
         </div>
 
         <div class="col-md-8 mx-auto mb-3">
-            <label for="username" class="form-label">E-mail</label>
-            <input formControlName="username" name="username" type="username" class="form-control" id="username" />
-            <div class="form-text alert-danger"
-                *ngIf="signUpForm.controls['username'].touched&&signUpForm.controls['username'].getError('required')">
-                Veuillez renseigner votre E-mail.
+            <label for="username" class="form-label" >Adresse mail</label>
+            <div class="input-group">
+                <span class="input-group-text">@</span>
+            <input  placeholder=" Sisir votre adresse mail"  formControlName="username" name="username" type="username" class="form-control" id="username" />
             </div>
             <div class="form-text alert-danger"
-                *ngIf="signUpForm.controls['username'].touched &&signUpForm.controls['username'].getError('username')">
+                *ngIf="signUpForm.controls['username'].touched && signUpForm.controls['username'].getError('required')">
+                Veuillez renseigner votre adresse mail.
+            </div>
+            <div class="form-text alert-danger"
+                *ngIf="signUpForm.controls['username'].touched && signUpForm.controls['username'].getError('email')">
                 Le format de l'email n'est pas correct ... 😢
             </div>
         </div>
     </div>
-    <div >
+    <div>
         <div class="col-md-8 mx-auto mb-3">
             <label for="password" class="form-label">Mot de passe</label>
             <input formControlName="password" name="password" type="password" class="form-control" id="password" />
@@ -31,44 +34,30 @@
           signUpForm.controls['password'].getError('minlength')">
                 Le mot de passe doit avoir une longueur minimale de 8 caractère
             </div>
-            <div id="userHelp" class="form-text alert-danger" *ngIf="
-          signUpForm.controls['password'].dirty &&
-          signUpForm.controls['password'].getError('maxlength')">
-                Le mot de passe doit avoir une longueur minimale de 12 caractère
+            <div id="userHelp" class="form-text alert-danger" 
+            *ngIf="signUpForm.controls['password'].dirty && signUpForm.controls['password'].getError('maxlength')">
+                Le mot de passe doit avoir une longueur maximale de 12 caractère
             </div>
 
             <div id="passwordHelpBlock" class="form-text">
                 De 8 à 12 cararctères, 1 majuscule, 1 minuscule, 1 chiffre et 1
-                caractère spécial (!@$*...).
+                caractère spécial.
             </div>
         </div>
         <div class="col-md-8 mx-auto mb-3">
             <label for="confirmPassword" class="form-label">Confirmer mot de passe</label>
-            <input formControlName="confirmPassword"  type="password" class="form-control"
-                id="confirmPassword" />
+            <input formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword" />
             <div class="form-text alert-danger"
                 *ngIf="signUpForm.controls['confirmPassword'].dirty && signUpForm.getError('mismatch')">
                 Les mots de passe doivent etre similaire😉
             </div>
         </div>
-        <div class="col-md-8 mx-auto mb-3">
-            <label for="iban" class="form-label">Entrer Votre IBAN</label>
-            <input formControlName="iban" name="iban" type="iban" class="form-control" id="iban" />
-            <div class="form-text alert-danger"
-                *ngIf="signUpForm.controls['iban'].touched&&signUpForm.controls['iban'].getError('required')">
-                Veuillez renseigner votre numéro IBAN.
-            </div>
-        </div>
-
 
         <div class="d-grid gap-2 col-12 col-xl-8 mx-auto my-4">
-            <button [disabled]="signUpForm.invalid" class="btn btn-success" type="submit"
-                style="background-color: #15574e">
+            <button [disabled]="signUpForm.invalid" class="btn btn-success" type="submit" style="background-color: #15574e">
                 Valider
             </button>
         </div>
     </div>
-
-
 
 </form>

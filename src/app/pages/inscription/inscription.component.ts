@@ -30,7 +30,6 @@ export class InscriptionComponent implements OnInit {
           ],
         ],
         confirmPassword: ['', Validators.required],
-        iban: ['', Validators.required],
       },
 
       {
@@ -63,18 +62,19 @@ export class InscriptionComponent implements OnInit {
   // methode de soumission du formulaire avec le bouton.
   onSubmit() {
     this.submitted = true;
+    console.log(this.signUpForm.valid);
     console.log(this.signUpForm.value);
-    //{"userNAme":"","password":"", "confirmPassw
+
+    //{"userNAme":"","password":"", "confirmPassw:""};
     const userName = this.signUpForm.value.username;
     const password = this.signUpForm.value.password;
     const confirmPassword = this.signUpForm.value.confirmPassword;
-    const iban = this.signUpForm.value.iban;
 
     // je transfère la valeur de mes champs userName et password
     // dans 2 constances pour plus de facilité de manipulation
     this.router.navigateByUrl('/');
     this.authService
-      .registerUser(userName, password, confirmPassword, iban)
+      .registerUser(userName, password, confirmPassword)
       .subscribe((responseApi) => {
         console.log(responseApi);
       });

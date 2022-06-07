@@ -15,6 +15,8 @@ export class PageAcceuilComponent implements OnInit {
     private router: Router
   ) {}
 
+  ngOnInit(): void {}
+
   onSubmit(form: NgForm) {
     console.log(form.value);
     const userName = form.value.username;
@@ -30,9 +32,14 @@ export class PageAcceuilComponent implements OnInit {
         //stockage de mon token
         //local storage
         // methode en cas de succès de l'authentification
-        localStorage.setItem('token', resp.token); //accesToken : ce que mon API renvoie.
-        this.router.navigateByUrl('/compte');
         this.authService.messager.next(true);
+        localStorage.setItem('token', resp.token); //Token : ce que mon API renvoie.
+        //this.router.navigateByUrl('/compte');
+        if (resp.profile === true) {
+          this.router.navigateByUrl('/compte');
+        } else {
+          this.router.navigateByUrl('/profilCreate');
+        }
         //methode à appeler en cas d'erreur d'authentification.
       },
       error: (error: any) => {
@@ -48,9 +55,14 @@ export class PageAcceuilComponent implements OnInit {
    * .subscribe({
    * next : () =>{*instructions*},
    * error : () => {*instructions*}})
-   */
+   *
   redirectUser() {
-    this.router.navigateByUrl('/compte');
+    if (this.isAuthenticated === true) {
+      this.router.navigateByUrl('/compte');
+    } else {
+      this.router.navigateByUrl('/profilCreate');
+    }
   }
-  ngOnInit(): void {}
+}
+*/
 }

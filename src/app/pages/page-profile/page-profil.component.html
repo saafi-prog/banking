@@ -1,0 +1,32 @@
+<h1>Votre profil</h1>
+<div>
+    <div class="container-xl mt-5 d-flex flx justify-content-between shadow-lg p-3 mb-5 bg-body rounded">
+        <div>
+            <p> Nom: {{userprofil.firstName}}</p>
+            <p> Prénom: {{userprofil.lastName}}</p>
+            <p> Numéro Mobile: {{userprofil.mobilePhone}}</p>
+            <p> Seuil de notification : {{userprofil.threshold}}</p>
+        </div>
+        <div>
+            <button type="button" class="btn btn-outline-warning" routerLink="update">Mettre à jour</button>
+        </div>
+    </div>
+    <div class=" table-responsive-sm">
+        <table class="table">
+            <thead class="bg-secondary text-white">
+                <th scope="col" class="text-start"> Date d'ouverture compte </th>
+                <th scope="col" class="text-start"> IBAN </th>
+                <th scope="col" class="text-end"> Solde </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-start">{{account.dateCreation}}</td>
+                    <td class="text-start"> {{account.iban}}</td>
+                    <td class="text-end">{{ account.bankBalance | currency : '€' }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>

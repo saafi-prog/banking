@@ -18,14 +18,12 @@ export class AuthenticationService {
   public registerUser(
     username: string,
     password: string,
-    confirmPassword: string,
-    iban: string
+    confirmPassword: string
   ) {
     const body = {
       username: username,
       password: password,
       confirmPassword: confirmPassword,
-      iban: iban,
     };
     return this.http.post(`${this.urlApi}/users`, body); // dans mon API choisir le nom users.
 
