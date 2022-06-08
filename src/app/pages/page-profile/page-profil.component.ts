@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Account } from 'src/app/models/account';
 import { UserProfil } from 'src/app/models/user-profil';
 import { BankingService } from 'src/app/services/banking.service';
 

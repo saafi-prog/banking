@@ -9,6 +9,7 @@ import { AuthenticationService } from '../services/authentication.service';
 })
 export class NavBarComponent implements OnInit {
   public isAuthenticated = false;
+  public isProfile = false;
 
   constructor(
     private authService: AuthenticationService,
@@ -27,6 +28,10 @@ export class NavBarComponent implements OnInit {
     });
     this.authService.newsletter.subscribe((textNewsletter: string) => {
       alert(textNewsletter);
+    });
+
+    this.authService.messager.subscribe((message: boolean) => {
+      this.isProfile = message;
     });
   }
 
